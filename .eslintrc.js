@@ -4,13 +4,13 @@ module.exports = {
         sourceType: 'module',
         project: './tsconfig.json',
     },
-    extends:  [
+    extends: [
         'airbnb-base',
-        'plugin:@typescript-eslint/recommended',  // Adiciona as recomendações padrões @typescript-eslint/eslint-plugin
-        'prettier/@typescript-eslint',  // Adiciona as configurações do prettier para evitar conflitos de regras @typescript-eslint/eslint-plugin
-        'plugin:prettier/recommended',  // Adiciona o plugin do prettier
+        'plugin:@typescript-eslint/recommended',
+        'prettier/@typescript-eslint',
+        'plugin:prettier/recommended',
     ],
     rules: {
-        'no-console': 'off',
+        'no-console': 'off'
     }
 }
