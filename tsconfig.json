@@ -2,7 +2,12 @@
   "compilerOptions": {
     "target": "ES2020",
     "module": "commonjs",
-    "sourceMap": true,
+    "sourceMap": false,
     "outDir": "build"
-  }
+  },
+  "exclude": [
+    "node_mosules",
+    "src/__tests__",
+    "tests"
+  ]
 }
