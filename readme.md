@@ -3,6 +3,16 @@
 Exercitando meu JavaScript.
 
 
+### Desafios Opcionais
+
+- Desenvolver Testes
+- Utilizar Typescript
+- Ambiente Docker utilizando o docker-compose.
+- Um ou mais Code Patterns
+- Realizar o deploy em algum servidor público como Heroku.
+- Documentação em Swagger e/ou Postman
+
+
 ### Meus agradecimentos
 
 Abaixo, artigos que foram de enorme ajuda.
