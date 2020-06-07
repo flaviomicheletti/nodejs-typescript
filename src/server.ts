@@ -14,31 +14,47 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get("/", (req: express.Request, res: express.Response) => {
-  res.json({
-    message: "app ok",
-  });
+//
+// redirecionamento
+//
+app.get("/:shortUrl", async (req: express.Request, res: express.Response) => {
+
+  const { shortUrl } = req.params;
+  const findUrl = await UrlSchema.findOne({ shortUrl });
+  const originalUrl = findUrl?.originalUrl;
+
+  if (originalUrl) {
+    return res.status(301).redirect(originalUrl);
+  } else {
+    return res.status(404).json({error: "url not found !"});
+  }
+
 });
 
-app.get("/shortener", (req: express.Request, res: express.Response) => {
-  res.json({
-    message: "shortener ok",
-  });
-});
-
+//
+// encurtador
+//
 app.post("/shortener", (req: express.Request, res: express.Response) => {
   const { url } = req.body;
 
+  // TODO: E se a URL já existir ?
+  // const _url = await UrlSchema.findOne({ url });
+  // if (_url) return _url.shortUrl;
+
   const shortUrl = Math.random().toString(36).substring(2, 8);
+  // url.short = await url.short.replace(/([^A-Za-z0-9])/, '').slice(1,6);
   
   UrlSchema.create({ 
     originalUrl: url,
     shortUrl 
   });
 
-  res.json({newUrl: shortUrl});
+  return res.status(201).json({ newUrl: shortUrl });
 });
 
+//
+// server
+//
 app.listen(port, () => {
   console.log(`Application listening on port ${port}`);
 });
