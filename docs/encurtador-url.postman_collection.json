@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "45abda45-04d1-41b4-947e-d250a9be5885",
+		"name": "encurtador-url",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "shortener",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"url\": \"http://wisereducacao.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/shortener",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"shortener"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "redirecionamento",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/:shortUrl",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						":shortUrl"
+					],
+					"variable": [
+						{
+							"key": "shortUrl",
+							"value": "2zasoo"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "c34036d5-a7e9-40d4-8965-65323766f5e2",
+				"type": "text/javascript",
+				"exec": [
+					"//",
+					"// dev",
+					"// ",
+					"var baseUrl = \"http://localhost:8081\";    ",
+					"",
+					"",
+					"//",
+					"// set",
+					"//",
+					"pm.collectionVariables.set(\"baseUrl\",   baseUrl);"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "8b6b5841-ef6b-4a55-902a-536c4c863c17",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "db0cccc0-63a1-4cd2-8b28-ab0332ca6b9e",
+			"key": "baseUrl",
+			"value": "http://localhost:8081",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
