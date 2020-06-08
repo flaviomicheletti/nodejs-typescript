@@ -1,6 +1,15 @@
 # Encurtador de URL's em Nodejs com Typescript
 
-Exercitando meu JavaScript.
+Este repositório é um teste de API em Nodejs.
+
+Para entender o que ele faz, leia a [documentação](/docs/readme.md)
+
+
+### Instalação e execução
+
+Você precisará ter uma instancia do Mongodb em sua máquina.
+
+Eu
 
 
 ### Desafios Opcionais
