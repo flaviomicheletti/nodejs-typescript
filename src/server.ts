@@ -44,7 +44,6 @@ app.post("/shortener", (req: express.Request, res: express.Response) => {
 
   const shortUrl = makeUrl();
 
-  
   UrlSchema.create({ 
     originalUrl: url,
     shortUrl 
