@@ -7,9 +7,9 @@
     "lint": "eslint --fix ./src/*",
     "prebuild": "rm -rf build/",
     "build": "tsc -p .",
+    "start": "node build/server.js",
     "dev": "ts-node-dev --respawn --transpileOnly src/server.ts",
     "dev:debug": "ts-node-dev --inspect=8181 --respawn --transpileOnly src/server.ts",
-    "start": "node build/server.js",
     "test": "jest",
     "test:coverage": "jest --coverage"
   },
