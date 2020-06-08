@@ -9,17 +9,37 @@ Para entender o que ele faz, leia a [documentação](/docs/readme.md)
 
 Você precisará ter uma instancia do Mongodb em sua máquina.
 
-Eu
+Eu utilizei um database chamado `todo` e uma collection chamada `urls`.
+
+    // Instalando as dependências
+    npm i
+
+    // Executando um build
+    npm run build
+
+    // Executando os testes
+    npm run test
+
+    // Iniciando a aplicação (ambiente dev)
+    npm run dev
+
+    // Iniciando a aplicação (ambiente produção)
+    npm run start
+
+
+### Testando com postman
+
+Se você quiser testar os endpoints com o postman, há uma [collection](/docs/encurtador-url.postman_collection.json) na pasta `/docs`.
 
 
 ### Desafios Opcionais
 
-- Desenvolver Testes
-- Utilizar Typescript
+- :ok: Desenvolver Testes
+- :ok: Utilizar Typescript
 - Ambiente Docker utilizando o docker-compose.
 - Um ou mais Code Patterns
 - Realizar o deploy em algum servidor público como Heroku.
-- Documentação em Swagger e/ou Postman
+- :ok: Documentação em Swagger e/ou Postman
 
 
 ### Meus agradecimentos
