@@ -2,6 +2,7 @@ import * as express from "express";
 import * as bodyParser from "body-parser";
 import connect from "./connect";
 import UrlSchema from './schemas/UrlSchema';
+import { makeUrl } from '../src/helpers/Url';
 
 //
 // connect database
@@ -41,8 +42,8 @@ app.post("/shortener", (req: express.Request, res: express.Response) => {
   // const _url = await UrlSchema.findOne({ url });
   // if (_url) return _url.shortUrl;
 
-  const shortUrl = Math.random().toString(36).substring(2, 8);
-  // url.short = await url.short.replace(/([^A-Za-z0-9])/, '').slice(1,6);
+  const shortUrl = makeUrl();
+
   
   UrlSchema.create({ 
     originalUrl: url,
